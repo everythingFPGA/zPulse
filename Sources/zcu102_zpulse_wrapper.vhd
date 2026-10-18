@@ -17,8 +17,23 @@ entity overlay_wrapper is
         CLK_IN_300_clk_n : in std_logic;
         CLK_IN_300_clk_p : in std_logic;
         clk_10_out : out std_logic;
+        clk_ctrl : out std_logic;
         clk_out_250 : out std_logic;
         locked_0 : out std_logic;
+        phase_ctrl_1 : out std_logic_vector (31 downto 0);
+        phase_ctrl_2 : out std_logic_vector (31 downto 0);
+        phase_ctrl_3 : out std_logic_vector (31 downto 0);
+        phase_ctrl_4 : out std_logic_vector (31 downto 0);
+        phase_ctrl_5 : out std_logic_vector (31 downto 0);
+        phase_ctrl_6 : out std_logic_vector (31 downto 0);
+        phase_ctrl_7 : out std_logic_vector (31 downto 0);
+        phase_status_1 : in std_logic_vector (31 downto 0);
+        phase_status_2 : in std_logic_vector (31 downto 0);
+        phase_status_3 : in std_logic_vector (31 downto 0);
+        phase_status_4 : in std_logic_vector (31 downto 0);
+        phase_status_5 : in std_logic_vector (31 downto 0);
+        phase_status_6 : in std_logic_vector (31 downto 0);
+        phase_status_7 : in std_logic_vector (31 downto 0);
         tx_data : out std_logic_vector (511 downto 0);
         tx_inhibit : out std_logic_vector (7 downto 0);
         txusr_in : in std_logic
@@ -35,7 +50,22 @@ architecture STRUCTURE of overlay_wrapper is
             tx_data : out std_logic_vector (511 downto 0);
             tx_inhibit : out std_logic_vector (7 downto 0);
             clk_10_out : out std_logic;
-            locked_0 : out std_logic
+            locked_0 : out std_logic;
+            clk_ctrl : out std_logic;
+            phase_ctrl_1 : out std_logic_vector (31 downto 0);
+            phase_ctrl_2 : out std_logic_vector (31 downto 0);
+            phase_ctrl_3 : out std_logic_vector (31 downto 0);
+            phase_ctrl_4 : out std_logic_vector (31 downto 0);
+            phase_ctrl_5 : out std_logic_vector (31 downto 0);
+            phase_ctrl_6 : out std_logic_vector (31 downto 0);
+            phase_ctrl_7 : out std_logic_vector (31 downto 0);
+            phase_status_1 : in std_logic_vector (31 downto 0);
+            phase_status_2 : in std_logic_vector (31 downto 0);
+            phase_status_3 : in std_logic_vector (31 downto 0);
+            phase_status_4 : in std_logic_vector (31 downto 0);
+            phase_status_5 : in std_logic_vector (31 downto 0);
+            phase_status_6 : in std_logic_vector (31 downto 0);
+            phase_status_7 : in std_logic_vector (31 downto 0)
         );
     end component zcu102_zpulse;
 begin
@@ -44,8 +74,23 @@ begin
             CLK_IN_300_clk_n => CLK_IN_300_clk_n,
             CLK_IN_300_clk_p => CLK_IN_300_clk_p,
             clk_10_out => clk_10_out,
+            clk_ctrl => clk_ctrl,
             clk_out_250 => clk_out_250,
             locked_0 => locked_0,
+            phase_ctrl_1(31 downto 0) => phase_ctrl_1(31 downto 0),
+            phase_ctrl_2(31 downto 0) => phase_ctrl_2(31 downto 0),
+            phase_ctrl_3(31 downto 0) => phase_ctrl_3(31 downto 0),
+            phase_ctrl_4(31 downto 0) => phase_ctrl_4(31 downto 0),
+            phase_ctrl_5(31 downto 0) => phase_ctrl_5(31 downto 0),
+            phase_ctrl_6(31 downto 0) => phase_ctrl_6(31 downto 0),
+            phase_ctrl_7(31 downto 0) => phase_ctrl_7(31 downto 0),
+            phase_status_1(31 downto 0) => phase_status_1(31 downto 0),
+            phase_status_2(31 downto 0) => phase_status_2(31 downto 0),
+            phase_status_3(31 downto 0) => phase_status_3(31 downto 0),
+            phase_status_4(31 downto 0) => phase_status_4(31 downto 0),
+            phase_status_5(31 downto 0) => phase_status_5(31 downto 0),
+            phase_status_6(31 downto 0) => phase_status_6(31 downto 0),
+            phase_status_7(31 downto 0) => phase_status_7(31 downto 0),
             tx_data(511 downto 0) => tx_data(511 downto 0),
             tx_inhibit(7 downto 0) => tx_inhibit(7 downto 0),
             txusr_in => txusr_in
